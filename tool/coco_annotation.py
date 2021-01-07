@@ -16,9 +16,9 @@ from tqdm import tqdm
 import os
 
 """hyper parameters"""
-json_file_path = 'E:/Dataset/mscoco2017/annotations/instances_train2017.json'
-images_dir_path = 'mscoco2017/train2017/'
-output_path = '../data/val.txt'
+json_file_path = '../datasets/coolingTowersV3/images/annotations/instances_train.json'
+images_dir_path = 'train'
+output_path = '../datasets/coolingTowersV3/images/train.txt'
 
 """load json file"""
 name_box_id = defaultdict(list)
@@ -32,7 +32,7 @@ annotations = data['annotations']
 for ant in tqdm(annotations):
     id = ant['image_id']
     # name = os.path.join(images_dir_path, images[id]['file_name'])
-    name = os.path.join(images_dir_path, '{:012d}.jpg'.format(id))
+    name = os.path.join(images_dir_path, '{:06d}.jpg'.format(id))
     cat = ant['category_id']
 
     if cat >= 1 and cat <= 11:

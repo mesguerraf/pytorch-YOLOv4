@@ -436,7 +436,7 @@ if __name__ == "__main__":
 
     random.seed(2020)
     np.random.seed(2020)
-    Cfg.dataset_dir = '/mnt/e/Dataset'
+    Cfg.dataset_dir = '../datasets/coolingTowersV3/images/'
     dataset = Yolo_dataset(Cfg.train_label, Cfg)
     for i in range(100):
         out_img, out_bboxes = dataset.__getitem__(i)
